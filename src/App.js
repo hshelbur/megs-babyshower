@@ -4,6 +4,7 @@ import './App.css';
 import Nav from './layout/navbar.js';
 import Home from './pages/home.js';
 import RSVP from './pages/rsvp.js';
+import Registry from './pages/registry.js'
 
 class App extends Component {
   render() {
@@ -23,7 +24,7 @@ class App extends Component {
                     } />
 
                   <Route path="/registry" render={() =>
-                      <div></div>
+                      <Registry />
                     } />
 
                   <Route path="/gallery" render={() =>

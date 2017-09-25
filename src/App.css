@@ -33,9 +33,19 @@
   color: white;
 }
 
-/* ---------- Home Styling ---------- */
+/* ---------- Page Styling ---------- */
 
 .vertical-align {
   text-align: center;
   margin-top: 200px;
+}
+
+.registry h1 {
+  margin-bottom: 60px;
+}
+
+.registry-link {
+  text-decoration: none;
+  padding: 15px 45px 15px 45px;
+  border: solid 1px #ccc;
 }

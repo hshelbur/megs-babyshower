@@ -6,6 +6,7 @@ class Home extends Component {
 			<div className="home vertical-align">
 				<h1>Megan & Donald</h1>
 				<h2>are expecting a baby!</h2>
+				<a className="button" href="/rsvp">RSVP</a>
 			</div>
 		);
 	}

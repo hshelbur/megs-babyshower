@@ -5,7 +5,7 @@ class Registry extends Component {
 		return(
 			<div className="registry vertical-align">
 				<h1>Megan is registered at</h1>
-				<a href="https://amazon.com" className="registry-link" target="_blank" rel="noopener noreferrer">AMAZON</a>
+				<a href="https://amazon.com" className="button" target="_blank" rel="noopener noreferrer">AMAZON</a>
 			</div>
 		);
 	}

@@ -1,3 +1,7 @@
+body {
+  background-color: lightskyblue;
+}
+
 /* ---------- NavBar Styling ---------- */
 
 .nav-bar ul {
@@ -12,15 +16,13 @@
 
 .nav-bar li a {
   display: inline-block;
-  padding: 14px 16px;
+  padding: 16px 16px;
   text-decoration: none;
   font-family: Lato, helvetica, sans-serif;
   font-weight: 100;
   color: #555;
   font-size: 14px;
-}
-
-.nav-bar li a.active {
+  border-radius: 5px;
   background-color: lightskyblue;
 }
 
@@ -29,8 +31,13 @@
 }
 
 .nav-bar li a:hover {
-  background-color: #ccc;
-  color: white;
+  filter: brightness(90%);
+  color: black;
+}
+
+.nav-bar li a.active {
+  background-color: papayawhip;
+  filter: brightness(100%);
 }
 
 /* ---------- Page Styling ---------- */
@@ -39,9 +46,9 @@
   text-transform: uppercase;
   text-decoration: none;
   padding: 20px 60px 20px 60px;
-  border: 2px solid #222;
+  border: 2px solid #444;
   border-radius: 5px;
-  background-color: lightskyblue;
+  background-color: papayawhip;
   transition: all .2s ease;
   font-weight: 800;
   color: black;
@@ -49,9 +56,14 @@
   cursor: pointer;
 }
 
+.button:hover {
+  filter: brightness(90%);
+}
+
 .vertical-align {
   text-align: center;
   margin-top: 200px;
+  color: #222;
 }
 
 .registry h1, .home h2 {

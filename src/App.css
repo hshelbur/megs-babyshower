@@ -69,3 +69,13 @@ body {
 .registry h1, .home h2 {
   margin-bottom: 60px;
 }
+
+.rsvp {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.rsvp iframe {
+  width: 700px;
+  height: 500px;
+}

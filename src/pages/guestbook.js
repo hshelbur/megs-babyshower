@@ -7,7 +7,7 @@ const Button = props =>
 
 const Post = props => (
 			<div className="post">
-				<p className="post-owner">{props.name}</p>
+				<p className="post-owner">{props.name} says:</p>
 				<p className="post-body">{props.message}</p>
 			</div>
 )
@@ -31,6 +31,7 @@ class CreatePostForm extends Component {
 
 		return <div className="create-post-form">
 			<form className="post-form">
+				<h2>Leave a Message for the Mom to Be!</h2>
 				<input className="name-input" type='text' placeholder='Name' value={post.name} onChange={e => this.setState({post: {...post, name : e.target.value}})} />
 				<textarea className="message-input" type='text' placeholder='Message' value={post.message} onChange={e => this.setState({post: {...post, message : e.target.value}})} />
 				<Button className="button" onClick={() => this.props.addNewPost(post)} label='Leave a Message!' />
@@ -62,17 +63,4 @@ class Guestbook extends Component {
 	
 }
 
-
 export default Guestbook
-
-
-
-
-
-
-
-
-
-
-
-

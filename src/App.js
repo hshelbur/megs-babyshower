@@ -5,6 +5,7 @@ import Nav from './layout/navbar.js';
 import Home from './pages/home.js';
 import RSVP from './pages/rsvp.js';
 import Registry from './pages/registry.js'
+import Guestbook from './pages/guestbook.js'
 
 class App extends Component {
   render() {
@@ -31,8 +32,8 @@ class App extends Component {
                       <div></div>
                     } />
 
-                  <Route path="/shower" render={() =>           
-                      <div></div>
+                  <Route path="/guestbook" render={() =>           
+                      <Guestbook />
                     } />
 
 

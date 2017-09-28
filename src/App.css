@@ -79,3 +79,20 @@ body {
   width: 700px;
   height: 500px;
 }
+
+.post-form input, .post-form button, .post-form textarea {
+  display: block;
+  margin: 20px auto;
+}
+
+.post-form .name-input {
+  width: 400px;
+}
+
+.post-form .message-input {
+  width: 400px;
+  height: 300px;
+}
+
+
+

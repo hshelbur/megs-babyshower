@@ -6,8 +6,26 @@ import Home from './pages/home.js';
 import RSVP from './pages/rsvp.js';
 import Registry from './pages/registry.js'
 import Guestbook from './pages/guestbook.js'
+import MessageBox from './components/MessageBox'
+import MessageList from './components/MessageList'
+import firebase from 'firebase';
 
 class App extends Component {
+
+  constructor(props){
+  super(props);
+  var config = {
+    apiKey: "AIzaSyA30-tYESVlhFGgSDxz3Bho4WLN4WjUuQw",
+    authDomain: "megs-babyshower.firebaseapp.com",
+    databaseURL: "https://megs-babyshower.firebaseio.com",
+    projectId: "megs-babyshower",
+    storageBucket: "",
+    messagingSenderId: "65092139484"
+  };
+  firebase.initializeApp(config);
+}
+
+
   render() {
     return (
         <Router>
@@ -33,7 +51,11 @@ class App extends Component {
                     } />
 
                   <Route path="/guestbook" render={() =>           
-                      <Guestbook />
+                      <div>
+                        <Guestbook />
+                        <MessageList db={firebase} />
+                        <MessageBox db={firebase} />
+                      </div>
                     } />
 
 

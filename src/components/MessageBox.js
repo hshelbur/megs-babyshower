@@ -16,12 +16,13 @@ class MessageBox extends Component {
 
   onClick(e){
       e.preventDefault();
+      const {post} = this.state
       let dbCon = this.props.db.database().ref('/messages');
       dbCon.push({
-        post: {name: e.target.value, message: e.target.value}
+        post: {name: post.name, message: post.message}
       });
       this.setState({
-        post: ''
+        post: {name: '', message: ''}
       });
   }
   

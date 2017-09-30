@@ -17,7 +17,7 @@ class MessageBox extends Component {
   onClick(e){
       e.preventDefault();
       const {post} = this.state
-      let dbCon = this.props.db.database().ref('/messages');
+      let dbCon = this.props.db.database().ref('/posts');
       dbCon.push({
         post: {name: post.name, message: post.message}
       });
@@ -30,7 +30,8 @@ class MessageBox extends Component {
     const {post} = this.state
 
     return (
-      <form>
+      <form className="post-form">
+        <h2>Leave a Message for the Mom to Be!</h2>
         <input className="name-input" type='text' placeholder='Name' value={post.name} onChange={e => this.setState({post: {...post, name : e.target.value}})} />
         <textarea className="message-input" type='text' placeholder='Message' value={post.message} onChange={e => this.setState({post: {...post, message : e.target.value}})} />
         <Button className="button" onClick={this.onClick} label='Leave a Message!' />

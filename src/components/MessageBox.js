@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import trim from 'trim';
+
 
 const Button = props =>
   <button onClick={props.onClick}  type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autoComplete="off">
@@ -16,11 +16,8 @@ class MessageBox extends Component {
 
   onClick(e){
       e.preventDefault();
-      const {post} = this.state
-      let dbCon = this.props.db.database().ref('/posts');
-      dbCon.push({
-        post: {name: post.name, message: post.message}
-      });
+      const {post: {name, message}} = this.state
+      this.props.createPost(name, message)
       this.setState({
         post: {name: '', message: ''}
       });

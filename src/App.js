@@ -9,7 +9,7 @@ import Guestbook from './pages/guestbook.js'
 import MessageBox from './components/MessageBox'
 import MessageList from './components/MessageList'
 
-const App = ({posts, db}) => 
+const App = ({posts, createPost}) => 
   <Router>
     <div>
 
@@ -34,7 +34,7 @@ const App = ({posts, db}) =>
 
             <Route path="/guestbook" render={() =>           
                 <div>
-                  <MessageBox db={db} />
+                  <MessageBox createPost={createPost} />
                   <MessageList posts={posts} />
                 </div>
               } />

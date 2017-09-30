@@ -31,11 +31,16 @@ function connect(Component){
 			})
 		}
 
+		createPost(name, message) {
+			const dbPosts = firebase.database().ref('/posts');
+			dbPosts.push({post: {name, message}});
+		}
+
 		render() {
 			const {posts} = this.state
 
 			return (
-				<Component posts={posts} db={firebase} />
+				<Component posts={posts} createPost={this.createPost} />
 			);
 		}
 	}

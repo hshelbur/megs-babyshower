@@ -8,62 +8,42 @@ import Registry from './pages/registry.js'
 import Guestbook from './pages/guestbook.js'
 import MessageBox from './components/MessageBox'
 import MessageList from './components/MessageList'
-import firebase from 'firebase';
 
-class App extends Component {
+const App = ({posts, db}) => 
+  <Router>
+    <div>
 
-  constructor(props){
-  super(props);
-  var config = {
-    apiKey: "AIzaSyA30-tYESVlhFGgSDxz3Bho4WLN4WjUuQw",
-    authDomain: "megs-babyshower.firebaseapp.com",
-    databaseURL: "https://megs-babyshower.firebaseio.com",
-    projectId: "megs-babyshower",
-    storageBucket: "",
-    messagingSenderId: "65092139484"
-  };
-  firebase.initializeApp(config);
-}
+      <Nav />
+      <body className="container">
 
+            <Route exact path="/" render={() =>           
+                <Home />
+              } />
 
-  render() {
-    return (
-        <Router>
-          <div>
+            <Route path="/rsvp" render={() =>           
+                <RSVP />
+              } />
 
-            <Nav />
-            <body className="container">
+            <Route path="/registry" render={() =>
+                <Registry />
+              } />
 
-                  <Route exact path="/" render={() =>           
-                      <Home />
-                    } />
+            <Route path="/gallery" render={() =>
+                <div></div>
+              } />
 
-                  <Route path="/rsvp" render={() =>           
-                      <RSVP />
-                    } />
+            <Route path="/guestbook" render={() =>           
+                <div>
+                  <MessageBox db={db} />
+                  <MessageList posts={posts} />
+                </div>
+              } />
 
-                  <Route path="/registry" render={() =>
-                      <Registry />
-                    } />
+      </body>
 
-                  <Route path="/gallery" render={() =>
-                      <div></div>
-                    } />
-
-                  <Route path="/guestbook" render={() =>           
-                      <div>
-                        <MessageBox db={firebase} />
-                        <MessageList db={firebase} />
-                      </div>
-                    } />
+    </div>
+  </Router>
 
 
-            </body>
-
-          </div>
-        </Router>
-    );
-  }
-}
 
 export default App;

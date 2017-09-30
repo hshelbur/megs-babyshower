@@ -1,13 +1,9 @@
 import React, {Component} from 'react';
 
-class Message extends Component {
-
-  render(){
-    return (
-      <div>
-        {this.props.message}
-      </div>
-    )
-  }
-}
+const Message = props => (
+			<div className="post">
+				<p className="post-owner">{props.name} says:</p>
+				<p className="post-body">{props.message}</p>
+			</div>
+)
 export default Message

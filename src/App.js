@@ -52,9 +52,8 @@ class App extends Component {
 
                   <Route path="/guestbook" render={() =>           
                       <div>
-                        <Guestbook />
-                        <MessageList db={firebase} />
                         <MessageBox db={firebase} />
+                        <MessageList db={firebase} />
                       </div>
                     } />
 

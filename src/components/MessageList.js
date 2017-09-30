@@ -6,42 +6,34 @@ class MessageList extends Component {
   constructor(props){
     super(props);
     this.state = {
-      messages: []
+      posts: []
     };
-    let app = this.props.db.database().ref('messages');
-    app.on('value', snapshot => {
-      this.getData(snapshot.val());
-    });
+
   }
 
-  getData(values){
-    let messagesVal = values;
-    let messages = _(messagesVal)
-                      .keys()
-                      .map(messageKey => {
-                          let cloned = _.clone(messagesVal[messageKey]);
-                          cloned.key = messageKey;
-                          return cloned;
-                      })
-                      .value();
-      this.setState({
-        messages: messages
-      });
-  }
+componentDidMount() {
+    const dbPosts = this.props.db.database().ref('posts')
+    dbPosts.on('value', snapshot => {
+        const value = snapshot.val()
+        const posts = _(value).keys().map(key => ({key, ...value[key]})).value()
+        this.setState({posts})
+    })
+}
 
   render() {
-    let messageNodes = this.state.messages.map((message) => {
+
+    let postNodes = this.state.posts.map((post) => {
       return (
         <div className="card">
           <div className="card-content">
-            <Message message = {message.message} />
+            <Message name={post.post.name} message={post.post.message} />
           </div>
         </div>
       )
     });
     return (
       <div>
-        {messageNodes}
+        {postNodes}
       </div>
     );
   }

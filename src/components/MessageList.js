@@ -6,7 +6,7 @@ const MessageList = ({posts}) =>
     {posts.map((post) => 
       <div className="card">
         <div className="card-content">
-          <Message name={post.post.name} message={post.post.message} />
+          <Message name={post.name} message={post.message} />
         </div>
       </div>
     )}

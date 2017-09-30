@@ -33,7 +33,7 @@ function connect(Component){
 
 		createPost(name, message) {
 			const dbPosts = firebase.database().ref('/posts');
-			dbPosts.push({post: {name, message}});
+			dbPosts.push({name, message});
 		}
 
 		render() {

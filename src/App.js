@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import Nav from './layout/navbar.js';
 import Home from './pages/home.js';
 import RSVP from './pages/rsvp.js';
 import Registry from './pages/registry.js'
-import Guestbook from './pages/guestbook.js'
 import MessageBox from './components/MessageBox'
 import MessageList from './components/MessageList'
 

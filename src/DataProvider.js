@@ -18,7 +18,8 @@ function connect(Component){
 		constructor(props){
 			super(props);
 			this.state = {
-				posts: []
+				posts: [],
+				rsvps: []
 			};
 		}
 
@@ -28,6 +29,13 @@ function connect(Component){
 				const value = snapshot.val()
 				const posts = _(value).keys().map(key => ({key, ...value[key]})).value()
 				this.setState({posts})
+			
+			const dbRSVPs = firebase.database().ref('rsvps')
+			dbRSVPs.on('value', snapshot => {
+				const value = snapshot.val()
+				const rsvps = _(value).keys().map(key => ({key, ...value[key]})).value()
+				this.setState({rsvps})
+			})
 			})
 		}
 
@@ -36,11 +44,16 @@ function connect(Component){
 			dbPosts.push({name, message});
 		}
 
+		createRSVP(name, selectedOption, number) {
+			const dbRSVPs = firebase.database().ref('/rsvps');
+			dbRSVPs.push({name, selectedOption, number});
+		}
+
 		render() {
-			const {posts} = this.state
+			const {posts, rsvps} = this.state
 
 			return (
-				<Component posts={posts} createPost={this.createPost} />
+				<Component posts={posts} rsvps={rsvps} createRSVP={this.createRSVP} createPost={this.createPost} />
 			);
 		}
 	}

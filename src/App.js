@@ -34,9 +34,7 @@ const App = ({posts, rsvps, createPost, createRSVP}) =>
                 } />
 
               <Route path="/rsvplist" render={() =>
-                  <div> 
-                    <RSVPList rsvps={rsvps} />
-                  </div>
+                  <RSVPList yes={rsvps.filter((rsvp) => rsvp.selectedOption === 'yes')} no={rsvps.filter((rsvp) => rsvp.selectedOption === 'no')} />
                 } />
 
               <Route path="/guestbook" render={() =>           

@@ -38,7 +38,6 @@ body {
   color: #555;
   font-size: 14px;
   border-radius: 5px;
-  background-color: #fafafe;
 }
 
 .nav-bar .nav-bar a {
@@ -75,7 +74,7 @@ body {
   filter: brightness(90%);
 }
 
-.home h1, .home h2, .rsvp-form h2, .registry h1, .post-form h2 {
+.home h1, .home h2, .rsvp-form h2, .registry h1, .post-form h2, .rsvp-list h2 {
   text-align: center;
 }
 
@@ -130,8 +129,16 @@ body {
   width: 325px;
 }
 
-@media (min-width: 450px) {
+@media (min-width: 475px) {
   .nav-bar ul {
     text-align: right;
+  }
+
+  .post-form .name-input, .post-form .message-input {
+    width: 400px;
+  }
+
+  .post{
+    width: 450px;
   }
 }

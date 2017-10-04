@@ -5,10 +5,9 @@ class Nav extends Component {
   render() {
     return (
         <nav className="nav-bar">
-          <ul>
+          <ul className="nav">
             <li><NavLink to={{pathname: "/rsvp"}}>RSVP</NavLink></li>
             <li><NavLink to={{pathname: "/registry"}}>REGISTRY</NavLink></li>
-            <li><NavLink to={{pathname: "/gallery"}}>GALLERY</NavLink></li>
             <li><NavLink to={{pathname: "/guestbook"}}>GUESTBOOK</NavLink></li>
           </ul>
         </nav>

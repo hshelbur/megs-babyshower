@@ -48,7 +48,7 @@ class RSVPBox extends Component {
 		          </label>
 		        </div>
 
-				<input className="number-input" type='number' placeholder='Number Joining' value={rsvp.number} onChange={e => this.setState({rsvp: {...rsvp, number : e.target.value}})} />
+				<input className="number-input" type='number' placeholder='Total Number in Party' value={rsvp.number} onChange={e => this.setState({rsvp: {...rsvp, number : e.target.value}})} />
 				
 				<Button className="button" onClick={this.onClick} label='RSVP!' />
 			</form>

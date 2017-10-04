@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import Nav from './layout/navbar.js';
 import Home from './pages/home.js';
-import RSVP from './pages/rsvp.js';
 import Registry from './pages/registry.js'
 import MessageBox from './components/MessageBox'
 import MessageList from './components/MessageList'
@@ -14,38 +13,42 @@ import RSVPList from './components/RSVPList'
 const App = ({posts, rsvps, createPost, createRSVP}) => 
   <Router>
     <div>
+      <div className="container">
+        <img src="/images/background.jpg" className="background" />
+      </div>
 
-      <Nav />
-      <body className="container">
+      <div>
+        <Nav />
+        <body>
 
-            <Route exact path="/" render={() =>           
-                <Home />
-              } />
+              <Route exact path="/" render={() =>           
+                  <Home />
+                } />
 
-            <Route path="/rsvp" render={() =>           
-                <RSVP />
-              } />
-
-            <Route path="/registry" render={() =>
-                <Registry />
-              } />
-
-            <Route path="/gallery" render={() =>
-                <div> 
+              <Route path="/rsvp" render={() =>           
                   <RSVPBox createRSVP={createRSVP} />
-                  <RSVPList rsvps={rsvps} />
-                </div>
-              } />
+                } />
 
-            <Route path="/guestbook" render={() =>           
-                <div>
-                  <MessageBox createPost={createPost} />
-                  <MessageList posts={posts} />
-                </div>
-              } />
+              <Route path="/registry" render={() =>
+                  <Registry />
+                } />
 
-      </body>
+              <Route path="/rsvplist" render={() =>
+                  <div> 
+                    <RSVPList rsvps={rsvps} />
+                  </div>
+                } />
 
+              <Route path="/guestbook" render={() =>           
+                  <div>
+                    <MessageBox createPost={createPost} />
+                    <MessageList posts={posts} />
+                  </div>
+                } />
+
+        </body>
+
+      </div>
     </div>
   </Router>
 

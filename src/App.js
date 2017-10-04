@@ -8,8 +8,10 @@ import Registry from './pages/registry.js'
 import MessageBox from './components/MessageBox'
 import MessageList from './components/MessageList'
 import RSVPBox from './components/RSVPBox'
+import RSVPList from './components/RSVPList'
 
-const App = ({posts, createPost, createRSVP}) => 
+
+const App = ({posts, rsvps, createPost, createRSVP}) => 
   <Router>
     <div>
 
@@ -29,7 +31,10 @@ const App = ({posts, createPost, createRSVP}) =>
               } />
 
             <Route path="/gallery" render={() =>
-                <RSVPBox createRSVP={createRSVP} />
+                <div> 
+                  <RSVPBox createRSVP={createRSVP} />
+                  <RSVPList rsvps={rsvps} />
+                </div>
               } />
 
             <Route path="/guestbook" render={() =>           

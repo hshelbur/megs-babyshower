@@ -8,7 +8,7 @@
 }
 
 .background {
-  height: 95%;
+  height: 100%;
   width: 100%;
 }
 
@@ -50,7 +50,7 @@ body {
 }
 
 .nav-bar li a.active {
-  background-color: papayawhip;
+  background-color: #bdfcf2;
   filter: brightness(100%);
 }
 

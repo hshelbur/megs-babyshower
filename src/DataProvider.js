@@ -29,13 +29,13 @@ function connect(Component){
 				const value = snapshot.val()
 				const posts = _(value).keys().map(key => ({key, ...value[key]})).value()
 				this.setState({posts})
+			})
 			
 			const dbRSVPs = firebase.database().ref('rsvps')
 			dbRSVPs.on('value', snapshot => {
 				const value = snapshot.val()
 				const rsvps = _(value).keys().map(key => ({key, ...value[key]})).value()
 				this.setState({rsvps})
-			})
 			})
 		}
 

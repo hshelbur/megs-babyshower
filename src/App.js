@@ -46,6 +46,10 @@ const App = ({posts, rsvps, createPost, createRSVP}) =>
 
         </body>
 
+        <footer>
+          <p className="developed-by">Designed and Developed by <a href="https://www.linkedin.com/in/howard-shelburne/" target="_blank" rel="noopener noreferrer">Howard Shelburne</a>, Freelance Web Developer</p>
+        </footer>
+
       </div>
     </div>
   </Router>

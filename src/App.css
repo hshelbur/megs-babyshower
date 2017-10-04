@@ -1,14 +1,28 @@
+.container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.background {
+  height: 100%;
+  width: 100%;
+}
+
 body {
-  background-color: lightskyblue;
+  font-family: Muli, helvetica;
 }
 
 /* ---------- NavBar Styling ---------- */
 
 .nav-bar ul {
   list-style-type: none;
-  text-align: right;
+  text-align: center;
   margin-right: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .nav-bar li {
@@ -24,7 +38,7 @@ body {
   color: #555;
   font-size: 14px;
   border-radius: 5px;
-  background-color: lightskyblue;
+  background-color: #fafafe;
 }
 
 .nav-bar .nav-bar a {
@@ -41,9 +55,9 @@ body {
   filter: brightness(100%);
 }
 
-/* ---------- Page Styling ---------- */
+/* ---------- Component Styling ---------- */
 
-.button {
+.button, button {
   text-transform: uppercase;
   text-decoration: none;
   padding: 20px 60px 20px 60px;
@@ -61,36 +75,32 @@ body {
   filter: brightness(90%);
 }
 
-.vertical-align {
+.home h1, .home h2, .rsvp-form h2, .registry h1, .post-form h2 {
   text-align: center;
-  margin-top: 200px;
-  color: #222;
 }
 
-.registry h1, .home h2 {
-  margin-bottom: 60px;
-  font-family: Muli, helvetica;
-}
-
-.rsvp {
+.registry a, .home a {
+  display: block;
   text-align: center;
-  margin-top: 40px;
+  width: 70px;
+  margin: auto;
 }
 
-.rsvp iframe {
-  width: 700px;
-  height: 500px;
+.rsvp-form .name-input, .rsvp-form .number-input, .rsvp-form button {
+  width: 200px;
+  display: block;
+  margin: 15px auto;
+}
+
+.radio {
+  width: 200px;
+  margin: auto;
 }
 
 .post-form input, .post-form button, .post-form textarea {
   display: block;
   margin: 20px auto;
   font-size: 20px;
-}
-
-.post-form h2 {
-  text-align: center;
-  font-family: Muli, helvetica;
 }
 
 .post-form button {
@@ -103,20 +113,25 @@ body {
 }
 
 .post-form .name-input {
-  width: 400px;
-
+  width: 300px;
 }
 
 .post-form .message-input {
-  width: 400px;
+  width: 300px;
   height: 150px;
 }
 
-.post {
+.post, .rsvp {
   padding: 5px;
   border: 1px solid #444;
   background-color: white;
   border-radius: 5px;
   margin: 10px auto;
-  width: 500px;
+  width: 325px;
+}
+
+@media (min-width: 450px) {
+  .nav-bar ul {
+    text-align: right;
+  }
 }

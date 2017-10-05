@@ -83,12 +83,17 @@ body {
   text-align: center;
   width: 70px;
   margin: auto;
+  margin-bottom: 80px;
 }
 
 .rsvp-form .name-input, .rsvp-form .number-input, .rsvp-form button {
   width: 200px;
   display: block;
   margin: 15px auto;
+}
+
+.rsvp-form button {
+  margin-bottom: 70px;
 }
 
 .radio {
@@ -112,11 +117,11 @@ body {
 }
 
 .post-form .name-input {
-  width: 300px;
+  width: 250px;
 }
 
 .post-form .message-input {
-  width: 300px;
+  width: 250px;
   height: 150px;
 }
 
@@ -126,7 +131,7 @@ body {
   background-color: white;
   border-radius: 5px;
   margin: 10px auto;
-  width: 325px;
+  width: 275px;
 }
 
 .card:last-of-type {
@@ -137,13 +142,36 @@ footer {
    position:fixed;
    left:0px;
    bottom:0px;
-   height:50px;
+   height:65px;
    width:100%;
    text-align: center;
    background-color: papayawhip;
 }
 
+@media (min-width: 375px) {
+  footer {
+    height: 55px;
+  }
+
+  .post-form .name-input {
+  width: 300px;
+  }
+
+  .post-form .message-input {
+    width: 300px;
+    height: 150px;
+  }
+
+  .post, .rsvp {
+    width: 325px;
+  }
+}
+
 @media (min-width: 475px) {
+footer {
+  height: 50px;
+}
+
   .nav-bar ul {
     text-align: right;
   }
@@ -152,7 +180,7 @@ footer {
     width: 400px;
   }
 
-  .post{
+  .post, .rsvp {
     width: 450px;
   }
 }

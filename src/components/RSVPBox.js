@@ -31,7 +31,11 @@ class RSVPBox extends Component {
 
 		return(
 			<form className="rsvp-form">
-				<h2>RSVP Here</h2>
+				<p>November 18, 2017, 2 pm to 4 pm (Saturday)</p>
+				<p>Buescher Center, Ascension Catholic Church</p>
+				<p>2950 N. Harbor City Blvd | Melbourne, FL 32935</p>
+
+				<h2>RSVP Here by November 10th</h2>
 				
 				<input className="name-input" type='text' placeholder='Name' value={rsvp.name} onChange={e => this.setState({rsvp: {...rsvp, name : e.target.value}})} />
 

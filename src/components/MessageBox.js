@@ -23,7 +23,7 @@ class MessageBox extends Component {
 
     return (
       <form className="post-form">
-        <h2>Leave a Message for the Mom to Be!</h2>
+        <h2>Leave a Message for the Parents to Be!</h2>
         <input className="name-input" type='text' placeholder='Name' value={post.name} onChange={e => this.setState({post: {...post, name : e.target.value}})} />
         <textarea className="message-input" type='text' placeholder='Message' value={post.message} onChange={e => this.setState({post: {...post, message : e.target.value}})} />
         <Button className="button" onClick={this.onClick} label='Leave a Message!' />
